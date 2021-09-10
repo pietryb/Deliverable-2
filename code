@@ -1,0 +1,62 @@
+using System;
+
+namespace Deliverable2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            bool executeProgram = true;
+            string userStoredValue = "";
+
+            do
+            {
+                // ask user to enter text to bot
+                Console.WriteLine("Enter text: ");
+
+                // Get user input
+                string userInput = Console.ReadLine();
+                
+                // set/convert userInput to be lowercase
+                string userInputLower = userInput.ToLower();
+                if (userInputLower != userStoredValue)
+                {
+                    // bot responses to user input
+                    if (userInputLower == "hello")
+                    {
+                        // bot responds Hi good to see you
+                        Console.WriteLine("Hi good to see you");
+                        userStoredValue = userInputLower;
+                    }
+                    else if (userInputLower == "bye")
+                    {
+                        // bot responds Good bye! 
+                        Console.WriteLine("Good bye!");
+                        executeProgram = false;
+                    }
+                    else if (userInputLower == "sup")
+                    {
+                        // bot responds I am good
+                        Console.WriteLine("I am good");
+                        userStoredValue = userInputLower;
+
+                    }
+                    else if (userInputLower == "hello there")
+                    {
+                        // bot responds General Kenobi
+                        Console.WriteLine("General Kenobi");
+                        userStoredValue = userInputLower;
+
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("I'm sorry but you have already said that");
+                }
+
+            } while (executeProgram);
+
+
+        }
+    }
+}
